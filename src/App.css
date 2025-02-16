@@ -1,0 +1,237 @@
+/* 全体のテーマ */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body.light-mode {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* 全体のレイアウト */
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+}
+
+.main-content {
+  display: flex;
+  gap: 20px; /* カレンダーとタスク管理の間隔 */
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.app-container {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  flex: 1;
+  max-width: 800px;
+}
+
+.app-container.light-mode {
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* カレンダー */
+.calendar-container {
+  flex: 0 0 180px; /* カレンダーの幅 */
+  margin-right: 20px;
+}
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.react-calendar.light-mode {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.react-calendar__tile {
+  padding: 4px; /* タイルを小さく */
+  text-align: center;
+}
+
+.react-calendar__tile--active {
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 5px;
+}
+
+.calendar-dot {
+  height: 4px;
+  width: 4px;
+  background-color: #4f46e5;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 2px;
+}
+
+/* ヘッダー */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.theme-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* タスク入力 */
+.task-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.task-input input,
+.task-input button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.task-input input[type="text"],
+.task-input input[type="date"] {
+  flex: 1;
+  background-color: #333;
+  color: white;
+}
+
+.task-input button {
+  background-color: #4f46e5;
+  color: white;
+  cursor: pointer;
+  width: 80px; /* ボタン幅 */
+}
+
+.task-input button:hover {
+  background-color: #4338ca;
+}
+
+/* タスクリスト */
+.task-container {
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2a2a2a;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.task-card.light-mode {
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-card span {
+  flex: 1;
+  word-break: break-word;
+  color: #e5e7eb;
+}
+
+.task-card.light-mode span {
+  color: #333;
+}
+
+.task-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  margin-left: 10px;
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.task-card input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task-card button {
+  background: none;
+  border: none;
+  color: #f87171;
+  cursor: pointer;
+}
+
+.task-card button:hover {
+  color: #dc2626;
+}
+
+/* ジャンル追加 */
+.add-genre {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.add-genre input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.add-genre button {
+  padding: 8px 12px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-genre button:hover {
+  background-color: #4338ca;
+}
